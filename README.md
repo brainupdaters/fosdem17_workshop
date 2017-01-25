@@ -151,8 +151,8 @@ NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
 ### GNU/Linux & OS X:
 
 ```sh
-$ git clone https://github.com/didacog/vagrant
-$ cd vagrant/fosdem17_ReaR_DRLM_workshop
+$ git clone https://github.com/brainupdaters/fosdem17_workshop
+$ cd fosdem17_workshop
 ```
 
 ### Windows:
