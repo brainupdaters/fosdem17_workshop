@@ -1,5 +1,8 @@
 echo "Hello from $HOSTNAME at FOSDEM 2017"
 
+echo "$(date) - Adjusting Timezone ..."
+ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime
+
 echo "Restarting network service ..."
 systemctl restart network
 
