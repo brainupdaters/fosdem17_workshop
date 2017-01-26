@@ -27,8 +27,7 @@ sed -i "/GRUB_CMDLINE_LINUX=/s/\"\"/\"max_loop=1024\"/g" /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "$(date) - Configuring TFTP service for DRLM ..."
-sed -i "/TFTP_DIRECTORY=/s/\"\/var\/lib\/tftpboot\"/\"\/var\/lib\/drlm\/store\"/g" /etc/default/tftpd-hpa
-sed -i "/TFTP_ADDRESS=/s/\"\[::\]:69\"/\"0.0.0.0:69\"/g" /etc/default/tftpd-hpa
+sed -i "/TFTP_DIRECTORY=/s/\"\/srv\/tftp\"/\"\/var\/lib\/drlm\/store\"/g" /etc/default/tftpd-hpa
 
 echo "$(date) - Configuring HTTP service for DRLM ..."
 a2enmod ssl
