@@ -214,6 +214,34 @@ NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
 ```sh
 $ vagrant destroy -f
 ```
+Previous command will keep downloaded boxes in your hard drive, 
+just the VM's deployed with ```vagrant up``` will be destroyed.
+If you do not need those boxes anymore, you can remove them:
+
+```sh
+$ vagrant box remove minimal/centos7
+Removing box 'minimal/centos7' (v7.0) with provider 'virtualbox'...
+
+$ vagrant box remove minimal/jessie64
+Removing box 'minimal/jessie64' (v8.0) with provider 'virtualbox'...
+
+$ vagrant box remove minimal/xenial64
+Removing box 'minimal/xenial64' (v16.04.1) with provider 'virtualbox'...
+
+$ vagrant box remove opensuse/openSUSE-42.1-x86_64
+Removing box 'opensuse/openSUSE-42.1-x86_64' (v1.0.0) with provider 'virtualbox'...
+```
+As well, to clean up Virtualbox networks added for the workshop, do this:
+
+```sh
+$ VBoxManage hostonlyif remove vboxnet1
+$ VBoxManage hostonlyif remove vboxnet2
+```
+##### NOTE:
+```sh
+If the network environment in your VBox installation is different, 
+please remove added networks accordingly.
+```
 
 ### Windows:
 
@@ -223,6 +251,8 @@ NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
 
 ## Release History
 
+* 1.0.1
+    * CHANGE: Improvements in destroy instructions. 
 * 1.0.0
     * The first proper release
     * CHANGE: Ready for the workshop at FOSDEM'17
