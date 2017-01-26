@@ -1,7 +1,12 @@
 echo "Hello from $HOSTNAME at FOSDEM 2017"
 
-cd /
 echo "$(date) - Starting DRLM Provisioning ..."
+
+echo "$(date) - Adjusting Timezone ..."
+ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime
+echo "Europe/Brussels" > /etc/timezone
+
+cd /
 echo "$(date) - Installing DRLM deps ..."
 sed -i "/ftp/s/.us./.be./g" /etc/apt/sources.list
 apt-get update
