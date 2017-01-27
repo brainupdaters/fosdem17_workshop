@@ -43,6 +43,8 @@ Vagrant.configure("2") do |config|
           "modifyvm", :id,
           "--cpuexecutioncap", "50",
           "--memory", memory.to_s,
+	  "--usb", "off",
+	  "--usbehci", "off",
         ]
       end
     end
