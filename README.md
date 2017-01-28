@@ -78,15 +78,18 @@ $ VBoxManage hostonlyif ipconfig vboxnet2 --ip 10.200.0.254 --netmask 255.255.25
 
 ### Windows:
 
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
+For Microsoft Windows OS will be pretty the same configuration (GUI & CLI), but the VirtualBox networks will be named diferent:
+
+- Host-Only Ethernet Adapter (vboxnet1)
+- Host-Only Ethernet Adapter #2 (vboxnet2)
+
+Note that there is no vboxnet0 in Windows and you must be in C:\Program files\Oracle\VirtualBox\ or adjust your PATH environment variable to run same VBox CLI commands.
 
 ##### NOTE:
 ```sh
 If Host-only network environment in your VBox installation is more complex, 
 please create 2 new networks with the required configuration and adjust 
-the Vagrantfile accordingly.
+the Vagrantfile accordingly. 
 ```
 
 Now, we have all the requirements to prepare the workshop environment.
@@ -107,7 +110,7 @@ from the Vagrantfile.
 
 All boxes have the user "vagrant" with sudo privileges and password "vagrant". 
 
-### GNU/Linux & OS X:
+### GNU/Linux, OS X & Windows:
 
 ```sh   
 $ vagrant box add https://atlas.hashicorp.com/minimal/boxes/centos7
@@ -140,26 +143,18 @@ minimal/xenial64 (virtualbox, 16.04.1)
 opensuse/openSUSE-42.1-x86_64 (virtualbox, 1.0.0)
 ```
 
-### Windows:
-
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
-
 ## Get the workshop from Github
 
-### GNU/Linux & OS X:
+### GNU/Linux, OS X & Windows:
 
+#### Using GIT:
 ```sh
 $ git clone https://github.com/brainupdaters/fosdem17_workshop
 $ cd fosdem17_workshop
 ```
-
-### Windows:
-
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
+#### Download ZIP file from github (https://github.com/brainupdaters/fosdem17_workshop/archive/master.zip)
+1. Uncompress.
+2. Go to fosdem17_workshop folder.
 
 Now, we have all the requirements to prepare the workshop environment.
 
@@ -167,49 +162,31 @@ Now, we have all the requirements to prepare the workshop environment.
 
 This takes about 10 minutes ...
 
-### GNU/Linux & OS X:
+### GNU/Linux, OS X & Windows:
 
 ```sh
 $ vagrant up
 ```
 
-### Windows:
-
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
-
 ## Suspend the environment
 
-### GNU/Linux & OS X:
+### GNU/Linux, OS X & Windows:
 
 ```sh
 $ vagrant suspend
 ```
 
-### Windows:
-
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
-
 ## Resume the environment
 
-### GNU/Linux & OS X:
+### GNU/Linux, OS X & Windows:
 
 ```sh
 $ vagrant resume
 ```
 
-### Windows:
-
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
-
 ## Destroy the environment
 
-### GNU/Linux & OS X:
+### GNU/Linux, OS X & Windows:
 
 ```sh
 $ vagrant destroy -f
@@ -233,24 +210,30 @@ Removing box 'opensuse/openSUSE-42.1-x86_64' (v1.0.0) with provider 'virtualbox'
 ```
 As well, to clean up Virtualbox networks added for the workshop, do this:
 
+### GNU/Linux & OS X:
+
 ```sh
 $ VBoxManage hostonlyif remove vboxnet1
 $ VBoxManage hostonlyif remove vboxnet2
 ```
+
+### Windows:
+
+```sh
+C:\Program files\Oracle\VirtualBox\VBoxManage hostonlyif remove "Host-Only Ethernet Adapter"
+C:\Program files\Oracle\VirtualBox\VBoxManage hostonlyif remove "Host-Only Ethernet Adapter #2"
+```
+
 ##### NOTE:
 ```sh
 If the network environment in your VBox installation is different, 
 please remove added networks accordingly.
 ```
 
-### Windows:
-
-```sh
-NO INSTRUCTIONS FOR WINDOWS AT THIS TIME
-```
-
 ## Release History
 
+* 1.0.2
+    * CHANGE: Added Windows OS instructions. 
 * 1.0.1
     * CHANGE: Improvements in destroy instructions. 
 * 1.0.0
