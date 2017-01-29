@@ -220,8 +220,8 @@ $ VBoxManage hostonlyif remove vboxnet2
 ### Windows:
 
 ```sh
-C:\Program files\Oracle\VirtualBox\VBoxManage hostonlyif remove "Host-Only Ethernet Adapter"
-C:\Program files\Oracle\VirtualBox\VBoxManage hostonlyif remove "Host-Only Ethernet Adapter #2"
+C:\Program files\Oracle\VirtualBox\VBoxManage hostonlyif remove "Virtualbox Host-Only Ethernet Adapter"
+C:\Program files\Oracle\VirtualBox\VBoxManage hostonlyif remove "Virtualbox Host-Only Ethernet Adapter #2"
 ```
 
 ##### NOTE:
