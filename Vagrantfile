@@ -45,6 +45,7 @@ Vagrant.configure("2") do |config|
           "--memory", memory.to_s,
 	  "--usb", "off",
 	  "--usbehci", "off",
+	  "--cableconnected1", "on",
         ]
       end
     end
