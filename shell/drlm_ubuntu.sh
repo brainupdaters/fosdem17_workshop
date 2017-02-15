@@ -23,7 +23,7 @@ make deb
 cd ..
 
 echo "$(date) - Installing DRLM ..."
-dpkg -i drlm_2.0.0_all.deb
+dpkg -i drlm_2.1.0_all.deb
 
 echo "$(date) - Configuring loop limits ..."
 sed -i "/GRUB_CMDLINE_LINUX=/s/\"\"/\"max_loop=1024\"/g" /etc/default/grub
