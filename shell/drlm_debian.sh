@@ -13,18 +13,19 @@ apt-get update
 apt-get -y install openssh-client openssl wget gzip tar gawk sed grep coreutils util-linux nfs-kernel-server rpcbind isc-dhcp-server tftpd-hpa syslinux apache2 qemu-utils sqlite3
 apt-get -y install lsb-release
 
-echo "$(date) - Installing Build deps ..."
-apt-get -y install git build-essential debhelper
+#echo "$(date) - Installing Build deps ..."
+#apt-get -y install git build-essential debhelper
 
-echo "$(date) - Getting DRLM from source ..."
-git clone https://github.com/brainupdaters/drlm
-cd drlm
+#echo "$(date) - Getting DRLM from source ..."
+#git clone https://github.com/brainupdaters/drlm
+#cd drlm
 
-echo "$(date) - Building DRLM ..."
-make deb
-cd ..
+#echo "$(date) - Building DRLM ..."
+#make deb
+#cd ..
 
 echo "$(date) - Installing DRLM ..."
+wget http://www.drlm.org/downloads/drlm_2.1.0_all.deb
 dpkg -i drlm_2.1.0_all.deb
 
 echo "$(date) - Configuring loop limits ..."
